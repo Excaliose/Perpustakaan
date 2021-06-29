@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="card-body">
-            <a href="#" class='btn btn-success'><i class="fas fa-plus"></i> Tambah Buku</a>
+            <a href="<?php echo site_url('buku/tambah') ?>" class='btn btn-success'><i class="fas fa-plus"></i> Tambah Buku</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-hover datatable">

@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="card-body">
-            <a href="#" class='btn btn-success'><i class="fas fa-plus"></i> Tambah Kategori</a>
+            <a href="<?php echo site_url('kategori/tambah') ?>" class='btn btn-success'><i class="fas fa-plus"></i> Tambah Kategori</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-hover datatable">
@@ -45,11 +45,29 @@
                             <td><?php echo $kt['nama'] ?></td>
                             <td>
                                 <div class="input-group">
-                                    <a href="#" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="#" class='btn btn-danger btn-xs'><i class="fas fa-trash"></i> Hapus</a>
+                                    <a href="<?php echo site_url('kategori/edit/'.$kt['id']) ?>" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="#" class='btn btn-danger btn-xs' data-toggle="modal" data-target="#notifhapus<?php echo $kt['id'] ?>"><i class="fas fa-trash"></i> Hapus</a>
                                 </div>
                             </td>
                         </tr>
+                        <div class="modal fade" id="notifhapus<?php echo $kt['id'] ?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-danger">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Hapus Kategori</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Hapus kategori <?php echo $kt['nama'] ?> ?</p>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
+                                        <a href="<?php echo site_url('kategori/prosesHapus/'.$kt['id']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
                     <?php endforeach; ?>
                 </tbody>
                 <tfoot>

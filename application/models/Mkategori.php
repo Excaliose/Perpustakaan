@@ -8,4 +8,30 @@ class Mkategori extends CI_Model
         $q = $this->db->get('kategori');
         return $q->result_array();
     }
+    public function get_data_id($id)
+    {
+        $this->db->where('id', $id);
+        $q = $this->db->get('kategori');
+        return $q->row_array();
+    }
+    public function tambah_data($post)
+    {
+        $input = array(
+            'nama' => $post['nama']
+        );
+        $this->db->insert('kategori', $input);
+    }
+    public function hapus_data($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('kategori');
+    }
+    public function edit_data($post, $id)
+    {
+        $input = array(
+            'nama' => $post['nama']
+        );
+        $this->db->where('id', $id);
+        $this->db->update('kategori', $input);
+    }
 }

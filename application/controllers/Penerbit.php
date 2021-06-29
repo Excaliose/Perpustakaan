@@ -14,4 +14,36 @@ class Penerbit extends CI_Controller
         $data['page'] = 'admin/penerbit/penerbit';
         $this->load->view('layout/base', $data);
     }
+    public function tambah()
+    {
+        $data['page'] = 'admin/penerbit/tambahPenerbit';
+        $this->load->view('layout/base', $data);
+    }
+
+    public function prosesTambah()
+    {
+        $post = $this->input->post();
+        $this->pn->tambah_data($post);
+        redirect('penerbit');
+    }
+
+    public function edit($id)
+    {
+        $data['penerbit'] = $this->pn->get_data_id($id);
+        $data['page'] = 'admin/penerbit/editPenerbit';
+        $this->load->view('layout/base', $data);
+    }
+
+    public function prosesEdit($id)
+    {
+        $post = $this->input->post();
+        $this->pn->edit_data($post, $id);
+        redirect('penerbit');
+    }
+
+    public function prosesHapus($id)
+    {
+        $this->pn->hapus_data($id);
+        redirect('penerbit');
+    }
 }
