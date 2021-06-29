@@ -40,6 +40,7 @@
                         <th>penerbit</th>
                         <th>pengarang</th>
                         <th>tahun_terbit</th>
+                        <th>jumlah</th>
                         <th>opsi</th>
                     </tr>
                 </thead>
@@ -50,10 +51,10 @@
                             <td><?php echo $bk['judul'] ?></td>
                             <td><?php echo $bk['cover'] ?></td>
                             <td><?php echo $bk['kategori'] ?></td>
-                            <td><?php echo $bk['jumlah'] ?></td>
                             <td><?php echo $bk['penerbit'] ?></td>
                             <td><?php echo $bk['pengarang'] ?></td>
                             <td><?php echo $bk['tahun_terbit'] ?></td>
+                            <td><?php echo $bk['jumlah'] ?></td>
                             <td>
                                 <div class="input-group">
                                     <a href="#" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
@@ -72,6 +73,7 @@
                         <th>penerbit</th>
                         <th>pengarang</th>
                         <th>tahun_terbit</th>
+                        <th>jumlah</th>
                         <th>opsi</th>
                     </tr>
                 </tfoot>

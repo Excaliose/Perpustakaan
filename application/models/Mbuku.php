@@ -11,7 +11,7 @@ class Mbuku extends CI_Model
     public function get_data_id($id)
     {
         $this->db->where('id_buku', $id);
-        $q = $this->db->get('member');
+        $q = $this->db->get('buku');
         return $q->row_array();
     }
     public function get_data_penerbit()
@@ -61,5 +61,20 @@ class Mbuku extends CI_Model
         );
         $this->db->where('id_buku', $id);
         $this->db->update('buku', $input);
+    }
+    public function edit_jumlah($post,$dataBook)
+    {
+        if( $dataBook['jumlah']-$post['jumlah']>0){
+        $input = array(
+            'jumlah' => $dataBook['jumlah']-$post['jumlah'],
+          
+        );
+        $this->db->where('id_buku', $post['id_buku']);
+        $this->db->update('buku', $input);
+        return true;
+    }
+    else{
+        return false;
+    }
     }
 }
