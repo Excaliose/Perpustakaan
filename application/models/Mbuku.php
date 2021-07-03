@@ -127,4 +127,19 @@ class Mbuku extends CI_Model
             return TRUE;
         }
     }
+    public function edit_jumlah($post,$dataBook)
+    {
+        if( $dataBook['jumlah']-$post['jumlah']>0){
+        $input = array(
+            'jumlah' => $dataBook['jumlah']-$post['jumlah'],
+          
+        );
+        $this->db->where('id_buku', $post['id_buku']);
+        $this->db->update('buku', $input);
+        return true;
+    }
+    else{
+        return false;
+    }
+    }
 }

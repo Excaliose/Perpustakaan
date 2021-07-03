@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
         <img src="<?php echo base_url('asset/dist/img/AdminLTELogo.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Perpustakaan</span>
     </a>
 
     <!-- Sidebar -->
@@ -81,13 +81,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../../index.html" class="nav-link">
+                            <a href="<?php echo site_url('peminjaman') ?>" class="nav-link">
                                 <i class="fas fa-file-export nav-icon"></i>
                                 <p>Peminjaman</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index2.html" class="nav-link">
+                            <a href="<?php echo site_url('pengembalian') ?>" class="nav-link">
                                 <i class="fas fa-file-import nav-icon"></i>
                                 <p>Pengembalian</p>
                             </a>

@@ -91,6 +91,7 @@
                         <th>penerbit</th>
                         <th>pengarang</th>
                         <th>tahun_terbit</th>
+                        <th>jumlah</th>
                         <th>opsi</th>
                     </tr>
                 </tfoot>
