@@ -33,6 +33,18 @@
                     <input type="text" class="form-control" id="nomer_induk" name="nomer_induk" placeholder="Nomor Induk" value="<?php echo $anggota['nomer_induk']?>">
                 </div>
                 <div class="form-group">
+                    <label for="nomer_induk">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="<?php echo $anggota['nama']?>">
+                </div>
+                <div class="form-group">
+                    <label for="nomer_induk">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $anggota['email']?>">
+                </div>
+                <div class="form-group">
+                    <label for="nomer_induk">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="<?php echo $anggota['alamat']?>">
+                </div>
+                <div class="form-group">
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status">
                         <option value="">Pilih Status Member</option>

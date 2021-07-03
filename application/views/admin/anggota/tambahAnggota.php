@@ -33,6 +33,18 @@
                     <input type="text" class="form-control" id="nomer_induk" name="nomer_induk" placeholder="Nomor Induk">
                 </div>
                 <div class="form-group">
+                    <label for="nomer_induk">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+                </div>
+                <div class="form-group">
+                    <label for="nomer_induk">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="nomer_induk">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+                </div>
+                <div class="form-group">
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status">
                         <option value="">Pilih Status Member</option>

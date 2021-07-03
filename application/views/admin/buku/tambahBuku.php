@@ -18,7 +18,7 @@
 
 <!-- Main content -->
 <section class="content">
-    <form action="<?php echo site_url('buku/prosesTambah') ?>" method="post">
+    <form action="<?php echo site_url('buku/prosesTambah') ?>" method="post" enctype="multipart/form-data">
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
@@ -67,10 +67,9 @@
                     <label for="tahun_terbit">Tahun Terbit</label>
                     <input type="number" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Tahun Terbit" maxlength="4" pattern="[0-9]" min="0">
                 </div>
-                <form action="upload.php" method="post" enctype="multipart/form-data" action="upload.php">
-                    <input type="file" name="file" id="cover" size="35"><br>
-                    <input type="submit" name="submit" id="submit" value="Submit">
-                </form>
+                <div class="form-group">
+                    <input type="file" name="cover" id="cover">
+                </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

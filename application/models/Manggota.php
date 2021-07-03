@@ -18,8 +18,10 @@ class Manggota extends CI_Model
     {
         $input = array(
             'nomer_induk' => $post['nomer_induk'],
-            'status' => $post['status'],
-            'pinjam' => 0
+            'nama' => $post['nama'],
+            'email' => $post['email'],
+            'alamat' => $post['alamat'],
+            'status' => $post['status']
         );
         $this->db->insert('member', $input);
     }
@@ -32,6 +34,9 @@ class Manggota extends CI_Model
     {
         $input = array(
             'nomer_induk' => $post['nomer_induk'],
+            'nama' => $post['nama'],
+            'email' => $post['email'],
+            'alamat' => $post['alamat'],
             'status' => $post['status']
         );
         $this->db->where('nomer_anggota', $id);

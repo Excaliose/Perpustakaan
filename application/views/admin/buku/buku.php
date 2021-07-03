@@ -35,11 +35,12 @@
                     <tr>
                         <th>id_buku</th>
                         <th>judul</th>
-                        <th>cover</th>
+                        <th width='20%'>cover</th>
                         <th>kategori</th>
                         <th>penerbit</th>
                         <th>pengarang</th>
                         <th>tahun_terbit</th>
+                        <th>jumlah</th>
                         <th>opsi</th>
                     </tr>
                 </thead>
@@ -48,19 +49,37 @@
                         <tr>
                             <td><?php echo $bk['id_buku'] ?></td>
                             <td><?php echo $bk['judul'] ?></td>
-                            <td><?php echo $bk['cover'] ?></td>
-                            <td><?php echo $bk['kategori'] ?></td>
-                            <td><?php echo $bk['jumlah'] ?></td>
-                            <td><?php echo $bk['penerbit'] ?></td>
-                            <td><?php echo $bk['pengarang'] ?></td>
+                            <td> <img src="<?php echo base_url('uploads/' . $bk['cover']) ?>" class="img-fluid" alt=""></td>
+                            <td><?php echo $bk['nama kategori'] ?></td>
+                            <td><?php echo $bk['nama penerbit'] ?></td>
+                            <td><?php echo $bk['nama pengarang'] ?></td>
                             <td><?php echo $bk['tahun_terbit'] ?></td>
+                            <td><?php echo $bk['jumlah'] ?></td>
                             <td>
                                 <div class="input-group">
-                                    <a href="#" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="#" class='btn btn-danger btn-xs'><i class="fas fa-trash"></i> Hapus</a>
+                                    <a href="<?php echo site_url('buku/edit/'.$bk['id_buku']) ?>" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="#" class='btn btn-danger btn-xs' data-toggle="modal" data-target="#notifhapus<?php echo $bk['id_buku'] ?>"><i class="fas fa-trash"></i> Hapus</a>
                                 </div>
                             </td>
                         </tr>
+                        <div class="modal fade" id="notifhapus<?php echo $bk['id_buku'] ?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-danger">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Hapus Buku</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Hapus Buku berjudul <?php echo $bk['judul'] ?> ?</p>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
+                                        <a href="<?php echo site_url('buku/prosesHapus/'.$bk['id_buku']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
                     <?php endforeach; ?>
                 </tbody>
                 <tfoot>

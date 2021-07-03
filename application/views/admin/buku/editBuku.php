@@ -18,7 +18,7 @@
 
 <!-- Main content -->
 <section class="content">
-    <form action="<?php echo site_url('buku/prosesEdit/'.$buku['id_buku']) ?>" method="post">
+    <form action="<?php echo site_url('buku/prosesEdit/'. $buku['id_buku']) ?>" method="post" enctype="multipart/form-data">
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
@@ -29,16 +29,46 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label for="nomer_induk">Jud</label>
-                    <input type="text" class="form-control" id="nomer_induk" name="nomer_induk" placeholder="Nomor Induk" value="<?php echo $anggota['nomer_induk']?>">
+                    <label for="nomer_induk">Judul</label>
+                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="<?php echo $buku['judul'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="status">Status</label>
-                    <select class="form-control" id="status" name="status">
-                        <option value="">Pilih Status Member</option>
-                        <option value="0" <?php if($anggota['status'] == '0') echo 'selected';?>>Mahasiswa</option>
-                        <option value="1" <?php if($anggota['status'] == '1') echo 'selected';?>>Dosen</option>
+                    <label for="penerbit">Penerbit</label>
+                    <select name="penerbit" id="penerbit" class="form-control">
+                        <option value="">Pilih penerbit</option>
+                        <?php foreach ($penerbit as $pn) : ?>
+                            <option value="<?php echo $pn['id'] ?>"<?php if($buku['penerbit']==$pn['id']){echo "selected";} ?>><?php echo $pn['nama'] ?></option>
+                        <?php endforeach; ?>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="pengarang">Pengarang</label>
+                    <select name="pengarang" id="pengarang" class="form-control">
+                        <option value="">Pilih pengarang</option>
+                        <?php foreach ($pengarang as $pg) : ?>
+                            <option value="<?php echo $pg['id'] ?>"<?php if($buku['pengarang']==$pg['id']){echo "selected";} ?>><?php echo $pg['nama'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="kategori">Kategori</label>
+                    <select name="kategori" id="kategori" class="form-control">
+                        <option value="">Pilih kategori</option>
+                        <?php foreach ($kategori as $kt) : ?>
+                            <option value="<?php echo $kt['id'] ?>"<?php if($buku['kategori']==$kt['id']){echo "selected";} ?>><?php echo $kt['nama'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="jumlah">Jumlah</label>
+                    <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="Jumlah" min="0" value="<?php echo $buku["jumlah"]?>">
+                </div>
+                <div class="form-group">
+                    <label for="tahun_terbit">Tahun Terbit</label>
+                    <input type="number" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Tahun Terbit" maxlength="4" pattern="[0-9]" min="0" value="<?php echo $buku["tahun_terbit"]?>">
+                </div>
+                <div class="form-group">
+                    <input type="file" name="cover" id="cover">
                 </div>
             </div>
             <!-- /.card-body -->

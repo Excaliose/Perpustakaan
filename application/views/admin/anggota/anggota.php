@@ -35,8 +35,10 @@
                     <tr>
                         <th>Nomer Anggota</th>
                         <th>Nomer Induk</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Alamat</th>
                         <th>Status</th>
-                        <th>Pinjam</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -45,12 +47,15 @@
                         <tr>
                             <td><?php echo $agt['nomer_anggota'] ?></td>
                             <td><?php echo $agt['nomer_induk'] ?></td>
+                            <td><?php echo $agt['nama'] ?></td>
+                            <td><?php echo $agt['email'] ?></td>
+                            <td><?php echo $agt['alamat'] ?></td>
                             <td><?php if ($agt['status'] == '0') {
                                     echo 'Mahasiswa';
                                 } else {
                                     echo 'Dosen';
                                 } ?></td>
-                            <td><?php echo $agt['pinjam'] ?></td>
+                           
                             <td>
                                 <div class="input-group">
                                     <a href="<?php echo site_url('anggota/edit/'.$agt['nomer_anggota']) ?>" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
@@ -65,7 +70,7 @@
                                         <h4 class="modal-title">Hapus Anggota</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Hapus Anggota nomer <?php echo $agt['nomer_anggota'] ?> ?</p>
+                                        <p>Hapus Anggota bernama <?php echo $agt['nama'] ?> ?</p>
                                     </div>
                                     <div class="modal-footer justify-content-between">
                                         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
@@ -82,8 +87,10 @@
                     <tr>
                         <th>Nomer Anggota</th>
                         <th>Nomer Induk</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Alamat</th>
                         <th>Status</th>
-                        <th>Pinjam</th>
                         <th>Opsi</th>
                     </tr>
                 </tfoot>
