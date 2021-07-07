@@ -99,7 +99,9 @@ class Mbuku extends CI_Model
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('cover')) {
                 $this->form_validation->set_message('cek_upload', $this->upload->display_errors());
-                return FALSE;
+                $this->db->where('id_buku', $id);
+                $this->db->update('buku', $input);
+                return TRUE;
             } else {
                 $dataupload = $this->upload->data();
                 $input['cover'] = $dataupload['file_name'];
@@ -108,8 +110,6 @@ class Mbuku extends CI_Model
                 return TRUE;
             }
         }
-        
-        
     }
     public function cek_upload()
     {
@@ -127,19 +127,18 @@ class Mbuku extends CI_Model
             return TRUE;
         }
     }
-    public function edit_jumlah($post,$dataBook)
+    public function edit_jumlah($post, $dataBook)
     {
-        if( $dataBook['jumlah']-$post['jumlah']>0){
-        $input = array(
-            'jumlah' => $dataBook['jumlah']-$post['jumlah'],
-          
-        );
-        $this->db->where('id_buku', $post['id_buku']);
-        $this->db->update('buku', $input);
-        return true;
-    }
-    else{
-        return false;
-    }
+        if ($dataBook['jumlah'] - $post['jumlah'] > 0) {
+            $input = array(
+                'jumlah' => $dataBook['jumlah'] - $post['jumlah'],
+
+            );
+            $this->db->where('id_buku', $post['id_buku']);
+            $this->db->update('buku', $input);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
