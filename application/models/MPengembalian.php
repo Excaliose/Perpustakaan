@@ -8,6 +8,11 @@ class MPengembalian extends CI_Model
         $query = $this->db->get('pengembalian');
         return $query->result_array();
     }
+    public function get_data_view()
+    {
+        $query = $this->db->get('view_pengembalian');
+        return $query->result_array();
+    }
     public function get_data_by_id($id){
         $this->db->where('id_transaksi',$id);
         $query= $this->db->get('pengembalian');
@@ -17,13 +22,27 @@ class MPengembalian extends CI_Model
     public function tambah_data($post)
     {
         $input = array(
-            'nomer_anggota' => $post['nomer_anggota'],
-            'id_buku' => $post['id_buku'],
-            'tanggal_pinjam' =>  $post['tanggal_pinjam'],
-            'tanggal_akhir_peminjaman' =>  $post['tanggal_akhir_peminjaman'],
-            'id_pegawai' =>  $post['id_pegawai'],
-            'jumlah' => $post['jumlah']
+            'id_peminjaman' => $post['id_transaksi'],
+            'tanggal_kembali' => $post['tanggal_kembali']
         );
-        $this->db->insert('peminjaman', $input);
+        $this->db->insert('pengembalian', $input);
     }
+    public function edit_data($post, $id)
+    {
+        $input = array(
+            'tanggal_kembali' => $post['tanggal_kembali']
+        );
+        $this->db->where('id_transaksi', $id);
+        $this->db->update('pengembalian', $input);
+    }
+    public function hapus_data($id)
+    {
+        $this->db->where('id_transaksi', $id);
+        $this->db->delete('peminjaman');
+    }
+    public function get_count(){
+        
+        return $this->db->count_all_results('pengembalian');
+    }
+
 }

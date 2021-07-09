@@ -35,43 +35,46 @@
                     <tr>
                         <th>ID Transaksi</th>
                         <th>ID Peminjaman</th>
+                        <th>ID Buku</th>
                         <th>Nomer Anggota</th>
-                        <th>Id Buku</th>
-                        <th>Jumlah</th>
-                        <th>Tanggal Pinjam</th>
-                        <th>Batas Tanggal Pinjam</th>
-                        <th>Tanggal Pengembalian</th>
-                        <th>ID Pegawai</th>
-                        <th>Status</th>
+                        <th>Tanggal Peminjaman</th>
+                        <th>Tanggal Akhir Peminjaman</th>
+                        <th>jumlah</th>
+                        <th>Tanggal Kembali</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($pengembalian as $pngmbl) : ?>
                         <tr>
                             <td><?php echo $pngmbl['id_transaksi'] ?></td>
-                            <td><?php echo $pngmbl['nomer_anggota'] ?></td>
-                            <td><?php echo $pngmbl['id_buku']?></td>
-                            <td><?php echo $pngmbl['tanggal_pinjam'] ?></td>
-                            <td><?php echo $pngmbl['id_pegawai'] ?></td>
+                            <td><?php echo $pngmbl['id_peminjaman'] ?></td>    
+                            <td><?php echo $pngmbl['id_buku'] ?></td>    
+                            <td><?php echo $pngmbl['nomer_anggota'] ?></td>  
+                            <td><?php echo $pngmbl['tanggal_pinjam'] ?></td>  
+                            <td><?php echo $pngmbl['tanggal_akhir_peminjaman'] ?></td>                       
+                            <td><?php echo $pngmbl['jumlah'] ?></td>                        
+                              
+                            <td><?php echo date('j M Y', strtotime($pngmbl['tanggal_kembali'])) ?></td>
                             <td>
                                 <div class="input-group">
-                                    <a href="<?php echo site_url('peminjaman/edit/'.$pngmbl['id_transaksi']) ?>" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="#" class='btn btn-danger btn-xs' data-toggle="modal" data-target="#notifhapus<?php echo $pnjm['id_transaksi'] ?>"><i class="fas fa-trash"></i> Hapus</a>
+                                    <a href="<?php echo site_url('pengembalian/edit/'.$pngmbl['id_transaksi'])?>" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="#" class='btn btn-danger btn-xs' data-toggle="modal" data-target="#notifhapus<?php echo $pngmbl['id_transaksi'] ?>"><i class="fas fa-trash"></i> Hapus</a>
                                 </div>
                             </td>
                         </tr>
-                        <div class="modal fade" id="notifhapus<?php echo $pnjm['id_transaksi'] ?>">
+                        <div class="modal fade" id="notifhapus<?php echo $pngmbl['id_transaksi'] ?>">
                             <div class="modal-dialog">
                                 <div class="modal-content bg-danger">
                                     <div class="modal-header">
                                         <h4 class="modal-title">Hapus Data Pengembalian</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Hapus Data  <?php echo $agt['nomer_anggota'] ?> ?</p>
+                                        <p>Hapus Data  <?php echo $pngmbl['id_transaksi'] ?> ?</p>
                                     </div>
                                     <div class="modal-footer justify-content-between">
                                         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-                                        <a href="<?php echo site_url('anggota/prosesHapus/'.$agt['nomer_anggota']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
+                                        <a href="<?php echo site_url('anggota/prosesHapus/'.$pngmbl['id_transaksi']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
                                     </div>
                                 </div>
                                 <!-- /.modal-content -->
@@ -81,18 +84,7 @@
                     <?php endforeach; ?>
                 </tbody>
                 <tfoot>
-                <tr>
-                        <th>ID Transaksi</th>
-                        <th>ID Peminjaman</th>
-                        <th>Nomer Anggota</th>
-                        <th>Id Buku</th>
-                        <th>Jumlah</th>
-                        <th>Tanggal Pinjam</th>
-                        <th>Batas Tanggal Pinjam</th>
-                        <th>Tanggal Pengembalian</th>
-                        <th>ID Pegawai</th>
-                        <th>Status</th>
-                    </tr>
+             
                 </tfoot>
             </table>
         </div>

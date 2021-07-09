@@ -41,6 +41,7 @@
                         <th>ID Pegawai</th>
                         <th>Jumlah</th>
                         <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,8 +50,8 @@
                             <td><?php echo $pnjm['id_transaksi'] ?></td>
                             <td><?php echo $pnjm['nomer_anggota'] ?></td>
                             <td><?php echo $pnjm['id_buku']?></td>
-                            <td><?php echo date('M j Y', strtotime($pnjm['tanggal_pinjam'])); ?></td>
-                            <td><?php echo date('M j Y', strtotime($pnjm['tanggal_akhir_peminjaman'])); ?></td>
+                            <td><?php echo date('j M Y', strtotime($pnjm['tanggal_pinjam'])); ?></td>
+                            <td><?php echo date('j M Y', strtotime($pnjm['tanggal_akhir_peminjaman'])); ?></td>
                             <td><?php echo $pnjm['id_pegawai'] ?></td>
                             <td><?php echo $pnjm['jumlah'] ?></td>
                             <td><?php if( $pnjm['status'] =='0'){
@@ -69,14 +70,14 @@
                             <div class="modal-dialog">
                                 <div class="modal-content bg-danger">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Hapus Data Pengembalian</h4>
+                                        <h4 class="modal-title">Hapus Data Peminjaman</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Hapus Data  <?php echo $agt['nomer_anggota'] ?> ?</p>
+                                        <p>Hapus Data  <?php echo $pnjm['id_transaksi'] ?> ?</p>
                                     </div>
                                     <div class="modal-footer justify-content-between">
                                         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-                                        <a href="<?php echo site_url('anggota/prosesHapus/'.$agt['nomer_anggota']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
+                                        <a href="<?php echo site_url('peminjaman/prosesHapus/'.$pnjm['id_transaksi']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
                                     </div>
                                 </div>
                                 <!-- /.modal-content -->
@@ -95,8 +96,9 @@
                         <th>ID Pegawai</th>
                         <th>Jumlah</th>
                         <th>Status</th>
-                    </tr>gawai</th>
+                        <th>Aksi</th>
                     </tr>
+                   
                 </tfoot>
             </table>
         </div>

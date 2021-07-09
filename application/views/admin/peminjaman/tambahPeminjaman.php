@@ -28,6 +28,14 @@
 				</div>
 			</div>
 			<div class="card-body">
+			<?php if($this->session->flashdata('msg')): ?>
+                    
+                    <p style="color:red;"><?php echo $this->session->flashdata('msg'); ?></p>
+               
+                <?php elseif($this->session->flashdata('msg')): ?>
+                    
+                    <p style="color:red;"><?php echo $this->session->flashdata('msg'); ?></p>
+                    <?php endif; ?>
 				<div class="form-group">
 					<label for="nomer_induk">Nomor Anggota</label>
 					<input type="text" class="form-control" id="nomer_anggota" name="nomer_anggota"
@@ -66,14 +74,7 @@
 					<label for="nomer_induk">Jumlah</label>
 					<input type="number" class="form-control" id="jumlah" name="jumlah"
 						placeholder="Jumlah">
-                        <?php if($this->session->flashdata('msg')): ?>
-                    
-                    <p style="color:red;"><?php echo $this->session->flashdata('msg'); ?></p>
-               
-                <?php elseif($this->session->flashdata('msg')): ?>
-                    
-                    <p style="color:red;"><?php echo $this->session->flashdata('msg'); ?></p>
-                    <?php endif; ?>
+                       
 				</div>
               
 			</div>
