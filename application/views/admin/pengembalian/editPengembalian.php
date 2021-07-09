@@ -18,28 +18,23 @@
 
 <!-- Main content -->
 <section class="content">
-    <form action="<?php echo site_url('anggota/prosesEdit/'.$anggota['nomer_anggota']) ?>" method="post">
+    <form action="<?php echo site_url('pengembalian/prosesEdit/'.$pengembalian['id_transaksi']) ?>" method="post">
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Edit Anggota</h3>
+                <h3 class="card-title">Edit Pengembalian</h3>
                 <div class="card-tools">
 
                 </div>
             </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="nomer_induk">Nomor Induk</label>
-                    <input type="text" class="form-control" id="nomer_induk" name="nomer_induk" placeholder="Nomor Induk" value="<?php echo $anggota['nomer_induk']?>">
-                </div>
-                <div class="form-group">
-                    <label for="status">Status</label>
-                    <select class="form-control" id="status" name="status">
-                        <option value="">Pilih Status Member</option>
-                        <option value="0" <?php if($anggota['status'] == '0') echo 'selected';?>>Mahasiswa</option>
-                        <option value="1" <?php if($anggota['status'] == '1') echo 'selected';?>>Dosen</option>
-                    </select>
-                </div>
+           
+				<div class="row">
+
+                <div class="col-md-5 col-sm-12 col-xs-12">
+						<p><b>Tanggal Pengembalian:</b></p>
+						<input class="form-control" type="date" name='tanggal_kembali'  value="<?php  echo $pengembalian['tanggal_kembali']?>" required>
+					</div>
+				
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

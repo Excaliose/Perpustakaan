@@ -18,7 +18,7 @@
 
 <!-- Main content -->
 <section class="content">
-	<form action="<?php echo site_url('peminjaman/prosesTambah') ?>" method="post">
+	<form action="<?php echo site_url('pengembalian/prosesTambah') ?>" method="post">
 		<!-- Default box -->
 		<div class="card">
 			<div class="card-header">
@@ -27,47 +27,21 @@
 
 				</div>
 			</div>
-			<div class="card-body">
-				<div class="form-group">
-					<label for="nomer_induk">Nomor Anggota</label>
-					<input type="text" class="form-control" id="nomer_anggota" name="nomer_anggota"
-						placeholder="Nomor Anggota">
-				</div>
-				<div class="form-group">
-					<label for="nomer_induk">ID Buku</label>
-					<input type="text" class="form-control" id="id_buku" name="id_buku"
-						placeholder="ID BUku">
-				</div>
-				<div class="row">
-
-					<div class="col-md-5 col-sm-12 col-xs-12">
-						<p><b>Tanggal Peminjaman:</b></p>
-						<input class="form-control" type="date" name='tanggal_pinjam' required>
-					</div>
-					<div class="col-md-5 col-sm-12 col-xs-12">
-						<p><b>Tanggal Batas Peminjaman:</b></p>
-						<input class="form-control" type="date" name='tanggal_akhir_peminjaman' required>
-					</div>
-
-				</div>
-                <div class="form-group">
-                </div>
-                <div class="row">
-                
-                <div class="col-md-5 col-sm-12 col-xs-12">
-                <label for="id_pegawai">Pegawai</label>
-              <select class="form-control" name='id_pegawai' required>
-              <?php foreach ($pegawai as $pgw) : ?>
-                <option value="<?=$pgw['id_pegawai'];?>"><?php echo $pgw['nama_pegawai']; ?></option>
+			<div class="col-md-5 col-sm-12 col-xs-12">
+                <label for="id_pegawai">ID Transaksi</label>
+              <select class="form-control" name='id_transaksi' required>
+              <?php foreach ($peminjaman as $pnjm) : ?>
+                <option value="<?=$pnjm['id_transaksi'];?>"><?php echo $pnjm['id_transaksi']; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>
-                <div class="col-md-5 col-sm-12 col-xs-12">
-					<label for="nomer_induk">Jumlah</label>
-					<input type="number" class="form-control" id="jumlah" name="jumlah"
-						placeholder="Jumlah">
-				</div>
-			</div>
+				<div class="row">
+
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<p><b>Tanggal Pengembalian:</b></p>
+						<input class="form-control" type="date" name='tanggal_kembali' required>
+					</div>
+				
             </div>
 			<!-- /.card-body -->
 			<div class="card-footer">

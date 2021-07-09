@@ -50,8 +50,8 @@
                             <td><?php echo $pnjm['id_transaksi'] ?></td>
                             <td><?php echo $pnjm['nomer_anggota'] ?></td>
                             <td><?php echo $pnjm['id_buku']?></td>
-                            <td><?php echo date('M j Y', strtotime($pnjm['tanggal_pinjam'])); ?></td>
-                            <td><?php echo date('M j Y', strtotime($pnjm['tanggal_akhir_peminjaman'])); ?></td>
+                            <td><?php echo date('j M Y', strtotime($pnjm['tanggal_pinjam'])); ?></td>
+                            <td><?php echo date('j M Y', strtotime($pnjm['tanggal_akhir_peminjaman'])); ?></td>
                             <td><?php echo $pnjm['id_pegawai'] ?></td>
                             <td><?php echo $pnjm['jumlah'] ?></td>
                             <td><?php if( $pnjm['status'] =='0'){

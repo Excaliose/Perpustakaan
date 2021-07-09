@@ -44,4 +44,25 @@ class MPeminjaman extends CI_Model
         $this->db->where('id_transaksi', $id);
         $this->db->delete('peminjaman');
     }
+
+    public function get_data_by_status()
+    {
+        $this->db->where('status',0);
+        $query = $this->db->get('peminjaman');
+        return $query->result_array();
+    }
+
+    public function edit_status($id)
+    {
+        $input = array(
+            'status' => 1
+
+        );
+        $this->db->where('id_transaksi', $id);
+        $this->db->update('peminjaman', $input);
+    }
+    public function get_count(){
+        
+        return $this->db->count_all_results('peminjaman');
+    }
 }
