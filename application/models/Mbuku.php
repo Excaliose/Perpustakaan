@@ -101,7 +101,7 @@ class Mbuku extends CI_Model
                 $this->form_validation->set_message('cek_upload', $this->upload->display_errors());
                 $this->db->where('id_buku', $id);
                 $this->db->update('buku', $input);
-                return TRUE;
+                return TRUE; 
             } else {
                 $dataupload = $this->upload->data();
                 $input['cover'] = $dataupload['file_name'];
