@@ -129,7 +129,7 @@ class Mbuku extends CI_Model
     }
     public function edit_jumlah($post,$dataBook)
     {
-        if( $dataBook['jumlah']-$post['jumlah']>0){
+        if( $dataBook['jumlah']-$post['jumlah']>=0){
         $input = array(
             'jumlah' => $dataBook['jumlah']-$post['jumlah'],
           
