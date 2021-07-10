@@ -59,6 +59,12 @@
     <script src="<?php echo base_url('asset/dist/js/demo.js') ?>"></script>
     <script>
         $(function() {
+            // $("#datalaporan").DataTable({
+            //     "responsive": true,
+            //     "lengthChange": false,
+            //     "autoWidth": false,
+            //     "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            // }).buttons().container().appendTo('#DataTables_Table_0_wrapper .col-md-6:eq(0)');
             $('.datatable').DataTable({
                 "paging": true,
                 "lengthChange": true,
