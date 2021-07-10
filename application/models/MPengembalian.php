@@ -15,7 +15,13 @@ class MPengembalian extends CI_Model
     }
     public function get_data_by_id($id){
         $this->db->where('id_transaksi',$id);
-        $query= $this->db->get('pengembalian');
+        $query= $this->db->get('view_pengembalian');
+        return $query->row_array();
+
+    }
+    public function get_data_by_id_peminjaman($id){
+        $this->db->where('id_peminjaman',$id);
+        $query= $this->db->get('view_pengembalian');
         return $query->row_array();
 
     }
@@ -38,7 +44,7 @@ class MPengembalian extends CI_Model
     public function hapus_data($id)
     {
         $this->db->where('id_transaksi', $id);
-        $this->db->delete('peminjaman');
+        $this->db->delete('pengembalian');
     }
     public function get_count(){
         

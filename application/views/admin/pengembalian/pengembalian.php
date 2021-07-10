@@ -7,7 +7,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="<?php echo site_url('') ?>">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('dashboard') ?>">Home</a></li>
                     <li class="breadcrumb-item active">Data pengembalian</li>
                 </ol>
             </div>
@@ -39,8 +39,8 @@
                         <th>Nomer Anggota</th>
                         <th>Tanggal Peminjaman</th>
                         <th>Tanggal Akhir Peminjaman</th>
-                        <th>jumlah</th>
                         <th>Tanggal Kembali</th>
+                          <th>jumlah</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -51,11 +51,19 @@
                             <td><?php echo $pngmbl['id_peminjaman'] ?></td>    
                             <td><?php echo $pngmbl['id_buku'] ?></td>    
                             <td><?php echo $pngmbl['nomer_anggota'] ?></td>  
-                            <td><?php echo $pngmbl['tanggal_pinjam'] ?></td>  
-                            <td><?php echo $pngmbl['tanggal_akhir_peminjaman'] ?></td>                       
-                            <td><?php echo $pngmbl['jumlah'] ?></td>                        
-                              
+                            <td><?php echo date('j M Y', strtotime($pngmbl['tanggal_pinjam'])); ?></td>
+                            <td><?php echo date('j M Y', strtotime($pngmbl['tanggal_akhir_peminjaman'])); ?></td>
+                        
+                            <?php
+                            if(round((strtotime($pngmbl['tanggal_kembali']) - strtotime($pngmbl['tanggal_akhir_peminjaman'])) / (60 * 60 * 24)) <= 0):
+                            ?>
                             <td><?php echo date('j M Y', strtotime($pngmbl['tanggal_kembali'])) ?></td>
+                            <?php
+                             else:
+                            ?>
+                             <td ><p style="color: red;"><?php echo date('j M Y', strtotime($pngmbl['tanggal_kembali'])) ?></p></td>
+                             <?php endif; ?>
+                            <td><?php echo $pngmbl['jumlah'] ?></td>                        
                             <td>
                                 <div class="input-group">
                                     <a href="<?php echo site_url('pengembalian/edit/'.$pngmbl['id_transaksi'])?>" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
@@ -74,7 +82,7 @@
                                     </div>
                                     <div class="modal-footer justify-content-between">
                                         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-                                        <a href="<?php echo site_url('anggota/prosesHapus/'.$pngmbl['id_transaksi']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
+                                        <a href="<?php echo site_url('pengembalian/prosesHapus/'.$pngmbl['id_transaksi']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
                                     </div>
                                 </div>
                                 <!-- /.modal-content -->

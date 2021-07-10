@@ -7,6 +7,8 @@ class Pengembalian extends CI_Controller
         parent::__construct();
         $this->load->model('MPengembalian', 'pengembalian');
         $this->load->model('MPeminjaman', 'peminjaman');
+        $this->load->model('MKeuangan', 'keuangan');
+
     }
 
     public function index()
@@ -33,10 +35,17 @@ class Pengembalian extends CI_Controller
         }
        
         else{
-             $result=$this->pengembalian->tambah_data($post);   
+           $this->pengembalian->tambah_data($post);   
             $this->peminjaman->edit_status($post['id_transaksi']);
+            $result= $this->pengembalian->get_data_by_id_peminjaman($post['id_transaksi']);
+            $diff=round((strtotime($result['tanggal_kembali']) - strtotime($result['tanggal_akhir_peminjaman'])) / (60 * 60 * 24));
+            if( $diff > 0){
+                $result['total']= $diff * 25000;
+            $this->keuangan->tambah_data($result);
+        }
+       
             redirect('pengembalian');
-            
+
                }
      
      
@@ -54,11 +63,27 @@ class Pengembalian extends CI_Controller
     {
         $post = $this->input->post();
         $this->pengembalian->edit_data($post, $id);
+        $result= $this->pengembalian->get_data_by_id($id);
+        $diff=round((strtotime($result['tanggal_kembali']) - strtotime($result['tanggal_akhir_peminjaman'])) / (60 * 60 * 24));
+        if( $diff > 0){
+            $result['total']= $diff * 25000;
+            $check=  $this->keuangan->get_data_by_id_transaksi($id);
+            if(empty($check)){
+                $this->keuangan->tambah_data($result);
+            }
+            else{
+                $this->keuangan->edit_data_by_transaksi($result,$id);
+            }
+      
+    }
+    else{
+        $this->keuangan->hapus_data_by_transaksi($id);
+    }
         redirect('pengembalian');
     }
     public function prosesHapus($id)
     {
-        $this->peminjaman->hapus_data($id);
+        $this->pengembalian->hapus_data($id);
         redirect('pengembalian');
     }
 }
