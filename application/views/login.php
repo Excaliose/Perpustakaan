@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in</title>
+    <title >AdminLTE 3 | Log in</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/dist/css/adminlte.min.css') ?>">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color: #343a40;">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Login Admin Perpustakaan</b></a>
+            <a style="color: white;"><b>SiBook </b>Login</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
-            <div class="card-body login-card-body">
+            <div class="card-body login-card-body" style="border-radius: 20px;">
                 <?php echo $this->session->flashdata('errorlogin'); ?>
                 <form action="<?php echo site_url('login/login') ?>" method="post">
                     <div class="input-group mb-3">
@@ -43,7 +43,7 @@
                     <div class="row">
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-dark btn-block">Sign In</button>
                         </div>
                         <!-- /.col -->
                     </div>

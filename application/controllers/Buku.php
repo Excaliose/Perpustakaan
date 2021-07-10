@@ -15,7 +15,12 @@ class Buku extends CI_Controller
         $data['kategori'] = $this->bk->get_data_kategori();
         $data['buku'] = $this->bk->get_data();
         $data['page'] = 'admin/buku/buku';
+        if(!$this->session->userdata('id')){
+            $this->load->view('login', $data);
+        }
+        else{
         $this->load->view('layout/base', $data);
+        }
     }
     public function tambah()
     {
