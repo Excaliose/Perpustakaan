@@ -9,7 +9,7 @@
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="<?php echo site_url('') ?>">Home</a></li>
 					<li class="breadcrumb-item active"><a href="<?php echo site_url('peminjaman') ?>">Data Peminjaman</a></li>
-					<li class="breadcrumb-item active">Tambah Data</li>
+					<li class="breadcrumb-item active">Edit Data</li>
 				</ol>
 			</div>
 		</div>

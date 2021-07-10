@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index3.html" class="nav-link">
+                            <a href="<?php echo site_url('keuangan') ?>" class="nav-link">
                                 <i class="fas fa-hand-holding-usd nav-icon"></i>
                                 <p>Keuangan</p>
                             </a>

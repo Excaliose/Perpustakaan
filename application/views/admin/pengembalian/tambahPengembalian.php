@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<div class="col-md-5 col-sm-12 col-xs-12">
-                <label for="id_pegawai">ID Transaksi</label>
+                <label for="id_pegawai">ID Transaksi peminjaman</label>
               <select class="form-control" name='id_transaksi' required>
               <?php foreach ($peminjaman as $pnjm) : ?>
                 <option value="<?=$pnjm['id_transaksi'];?>"><?php echo $pnjm['id_transaksi']; ?></option>
