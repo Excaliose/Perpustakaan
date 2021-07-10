@@ -42,4 +42,8 @@ class Manggota extends CI_Model
         $this->db->where('nomer_anggota', $id);
         $this->db->update('member', $input);
     }
+    public function get_count(){
+        
+        return $this->db->count_all_results('member');
+    }
 }

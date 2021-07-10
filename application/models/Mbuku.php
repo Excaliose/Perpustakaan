@@ -142,4 +142,8 @@ class Mbuku extends CI_Model
         return false;
     }
     }
+    public function get_count(){
+        
+        return $this->db->count_all_results('buku');
+    }
 }

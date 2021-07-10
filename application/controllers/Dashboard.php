@@ -7,12 +7,16 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->load->model('MPeminjaman', 'peminjaman');
         $this->load->model('MPengembalian', 'pengembalian');
+        $this->load->model('Manggota', 'anggota');
+        $this->load->model('Mbuku', 'buku');
     }
 
     public function index()
     {
         $data['peminjaman'] = $this->peminjaman->get_count();
         $data['pengembalian'] = $this->pengembalian->get_count();
+        $data['anggota'] = $this->anggota->get_count();
+        $data['buku'] = $this->buku->get_count();
         $data['page'] = 'admin/dashboard';
         $this->load->view('layout/base', $data);
     }

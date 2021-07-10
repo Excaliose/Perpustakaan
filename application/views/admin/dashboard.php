@@ -7,6 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
+        <script src="https://kit.fontawesome.com/0cc81f7213.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -24,6 +25,8 @@
                                 <div class="card bg-dark text-white mb-4">
                                     <div class="card-body">Jumlah Anggota</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <h3 class=" text-white stretched-link" ><?php echo $anggota ?> </h3>
+                                    <div class=" text-white ml-auto p-2"><i class="fas fa-user-friends" style="font-size:25px;"></i></div>
                                        
                                     </div>
                                 </div>
@@ -31,36 +34,9 @@
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-dark text-white mb-4">
                                     <div class="card-body">Jumlah Buku</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-dark text-white mb-4">
-                                    <div class="card-body">Jumlah Pengarang</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-dark text-white mb-4">
-                                    <div class="card-body">Jumlah penerbit</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-dark text-white mb-4">
-                                    <div class="card-body">Jumlah Kategori</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    <div class="card-footer d-flex ">
+                                    <h3 class=" text-white stretched-link" ><?php echo $buku ?> </h3>
+                                        <div class=" text-white ml-auto p-2"><i class="fas fa-book" style="font-size:25px;"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -69,6 +45,7 @@
                                     <div class="card-body">Jumlah Peminjaman</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                     <h3 class=" text-white stretched-link" ><?php echo $peminjaman ?> </h3>
+                                        <div class=" text-white ml-auto p-2"><i class="fas fa-book" style="font-size:25px;"></i></div>
                                     
                                     </div>
                                 </div>
@@ -78,7 +55,7 @@
                                     <div class="card-body">Jumlah Pengembalian</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                     <h3 class=" text-white stretched-link" ><?php echo $pengembalian ?> </h3>
-                                    
+                                    <div class=" text-white ml-auto p-2"><i class="fas fa-book" style="font-size:25px;"></i></div>
                                     </div>
                                 </div>
                             </div>
