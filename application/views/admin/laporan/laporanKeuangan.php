@@ -27,12 +27,10 @@
             </div>
         </div>
         <div class="card-body">
-    
             <table id="datalaporan" class="table table-bordered table-striped">
             <thead>
                     <tr>
                         <th>ID</th>
-                        <th>ID Peminjaman</th>
                         <th>ID Pengembalian</th>
                         <th>ID Buku</th>
                         <th>Nomer Anggota</th>
@@ -49,7 +47,6 @@
                     <?php foreach ($keuangan as $keuangan) : ?>
                         <tr>
                             <td><?php echo $keuangan['id'] ?></td>
-                            <td><?php echo $keuangan['id_peminjaman'] ?></td>    
                             <td><?php echo $keuangan['id_transaksi'] ?></td>    
                             <td><?php echo $keuangan['id_buku'] ?></td>    
                             <td><?php echo $keuangan['nomer_anggota'] ?></td>  

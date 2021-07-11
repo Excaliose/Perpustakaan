@@ -69,12 +69,19 @@
         });
     </script>
     <script type="text/javascript">
-        $(document).ready(function() {
+       $(function() {
             $('#datalaporan').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'
                 ],
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "responsive": true,
             });
         });
     </script>
