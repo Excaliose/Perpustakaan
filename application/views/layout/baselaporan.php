@@ -74,7 +74,7 @@
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'
-                ]
+                ],
             });
         });
     </script>

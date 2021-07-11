@@ -101,12 +101,45 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo site_url('laporan') ?>" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon far fa-clipboard"></i>
                         <p>
                             Laporan
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?php echo site_url('laporan/anggota') ?>" class="nav-link">
+                                <i class="fas fa-file-export nav-icon"></i>
+                                <p>Anggota</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo site_url('laporan/buku') ?>" class="nav-link">
+                                <i class="fas fa-file-import nav-icon"></i>
+                                <p>Buku</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo site_url('laporan/keuangan') ?>" class="nav-link">
+                                <i class="fas fa-hand-holding-usd nav-icon"></i>
+                                <p>Keuangan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo site_url('laporan/peminjaman') ?>" class="nav-link">
+                                <i class="fas fa-hand-holding-usd nav-icon"></i>
+                                <p>Peminjaman</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo site_url('laporan/pengembalian') ?>" class="nav-link">
+                                <i class="fas fa-hand-holding-usd nav-icon"></i>
+                                <p>Pengembalian</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo site_url('login/logout') ?>" class="nav-link">
