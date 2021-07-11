@@ -28,7 +28,7 @@
         </div>
         <div class="card-body">
     
-            <table id="datalaporan" class="table table-bordered table-striped datatable">
+            <table id="datalaporan" class="table table-bordered table-striped">
             <thead>
                     <tr>
                         <th>ID</th>
@@ -42,7 +42,7 @@
                         <th>jumlah</th>
                         <th>Total Denda</th>
                         <th>Status Denda</th>
-                        <th>Aksi</th>
+                    
                     </tr>
                 </thead>
                 <tbody>
@@ -80,29 +80,7 @@
                                 echo "Sudah Dibayar";
                             endif;
                             ?></td>  
-                            <td>
-                                <div class="input-group">
-                                    <a href="<?php echo site_url('keuangan/edit/'.$keuangan['id'])?>" class='btn btn-info btn-xs'><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="#" class='btn btn-danger btn-xs' data-toggle="modal" data-target="#notifhapus<?php echo $keuangan['id'] ?>"><i class="fas fa-trash"></i> Hapus</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <div class="modal fade" id="notifhapus<?php echo $keuangan['id'] ?>">
-                            <div class="modal-dialog">
-                                <div class="modal-content bg-danger">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Hapus Data Pengembalian</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Hapus Data  <?php echo $keuangan['id'] ?> ?</p>
-                                    </div>
-                                    <div class="modal-footer justify-content-between">
-                                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-                                        <a href="<?php echo site_url('keuangan/prosesHapus/'.$keuangan['id']) ?>" class="btn btn-outline-light">Ya, Hapus</a>
-                                    </div>
-                                </div>
-                                <!-- /.modal-content -->
-                            </div>
+                         
                             <!-- /.modal-dialog -->
                         </div>
                     <?php endforeach; ?>
