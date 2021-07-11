@@ -62,15 +62,8 @@ class Peminjaman extends CI_Controller
                 $this->session->set_flashdata('msg', 'Gagal... Data buku Atau Anggota Tidak valid');
              
                     redirect('peminjaman/tambah');
-                   
-                   
-               
                
                }
-     
-     
-     
-       
     }
     }
 

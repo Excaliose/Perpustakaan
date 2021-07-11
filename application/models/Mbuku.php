@@ -141,7 +141,20 @@ class Mbuku extends CI_Model
     else{
         return false;
     }
+    
     }
+    public function edit_jumlah_kembali($post, $dataBook)
+    {
+        
+        $input = array(
+            'jumlah' => $dataBook['jumlah']+$post['jumlah'],
+          
+        );
+        $this->db->where('id_buku', $post['id_buku']);
+        $this->db->update('buku', $input);
+        return true;
+    
+}
     public function get_count(){
         
         return $this->db->count_all_results('buku');

@@ -32,13 +32,13 @@
                     <tr>
                         <th>id_buku</th>
                         <th>judul</th>
-                        <th width='20%'>cover</th>
+                       
                         <th>kategori</th>
                         <th>penerbit</th>
                         <th>pengarang</th>
                         <th>tahun_terbit</th>
                         <th>jumlah</th>
-                        <th>opsi</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -46,13 +46,13 @@
                         <tr>
                             <td><?php echo $bk['id_buku'] ?></td>
                             <td><?php echo $bk['judul'] ?></td>
-                            <td> <img src="<?php echo base_url('uploads/' . $bk['cover']) ?>" class="img-fluid" alt=""></td>
+                          
                             <td><?php echo $bk['nama kategori'] ?></td>
                             <td><?php echo $bk['nama penerbit'] ?></td>
                             <td><?php echo $bk['nama pengarang'] ?></td>
                             <td><?php echo $bk['tahun_terbit'] ?></td>
                             <td><?php echo $bk['jumlah'] ?></td>
-                            <td>
+                           
                             
                             <!-- /.modal-dialog -->
                         </div>
@@ -62,13 +62,13 @@
                     <tr>
                         <th>id_buku</th>
                         <th>judul</th>
-                        <th>cover</th>
+                       
                         <th>kategori</th>
                         <th>penerbit</th>
                         <th>pengarang</th>
                         <th>tahun_terbit</th>
                         <th>jumlah</th>
-                        <th>opsi</th>
+                       
                     </tr>
                 </tfoot>
             </table>

@@ -8,6 +8,7 @@ class Pengembalian extends CI_Controller
         $this->load->model('MPengembalian', 'pengembalian');
         $this->load->model('MPeminjaman', 'peminjaman');
         $this->load->model('MKeuangan', 'keuangan');
+        $this->load->model('MBuku', 'buku');
 
     }
 
@@ -35,9 +36,12 @@ class Pengembalian extends CI_Controller
         }
        
         else{
-           $this->pengembalian->tambah_data($post);   
+           $this->pengembalian->tambah_data($post);
+           
             $this->peminjaman->edit_status($post['id_transaksi']);
             $result= $this->pengembalian->get_data_by_id_peminjaman($post['id_transaksi']);
+            $data= $this->buku->get_data_id($result['id_buku']);   
+            $this->buku->edit_jumlah_kembali($result,$data);
             $diff=round((strtotime($result['tanggal_kembali']) - strtotime($result['tanggal_akhir_peminjaman'])) / (60 * 60 * 24));
             if( $diff > 0){
                 $result['total']= $diff * 25000;
